@@ -85,6 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Hurricane Dorian poised to slam the Carolinas!',
+    date: 'Sep 4th, 2019',
+    firstParagraph: `Hurricane Dorian gradually leaves Florida behind Wednesday, setting its sights on the coasts of Georgia and then the Carolinas. These areas face a triple threat of “destructive winds, flooding rains, and life-threatening storm surges,” according to the National Hurricane Center.`,
+
+    secondParagraph: `While Dorian has stayed far enough off the coast to largely spare Florida from the worst of its wrath, it is forecast to make a much closer approach to the coastline of the Carolinas between late Wednesday and Thursday and could even make landfall. Impacts are thus expected to be more severe.`,
+
+    thirdParagraph: `Around Charleston, S.C., for example, wind gusts could hit 80 mph, and water levels could rank among the top five levels ever recorded due to the combination of ocean surge and up to 15 inches of rain. Higher wind gusts could lash North Carolina’s Outer Banks, leading to power outages and damage.`
   }
 ];
 
@@ -137,6 +146,9 @@ const article = document.querySelector('.articles');
 data.forEach(data => {
   article.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
 });
+
+//Add new article (hardcode) (Added new object as well that successfully created new ccard)
+article.appendChild(createArticle('Trife Life (Mobb Deep)', 1995, 'Album: The Infamous', 'Producer: Havoc', 'Label: Infamous Records, RED Distribution, Sony Music Entertainment'));
 
 /* <div class="article">
 <h2>{title of the article}</h2>
