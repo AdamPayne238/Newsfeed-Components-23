@@ -88,6 +88,67 @@ const data = [
   }
 ];
 
+function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph){
+
+    //Define New Elements
+    const article = document.createElement('div');
+    const articleTitle = document.createElement('h2');
+    const articleDate = document.createElement('p');
+    const paragraphOne = document.createElement('p');
+    const paragraphTwo = document.createElement('p');
+    const paragraphThree = document.createElement('p');
+    const expandButton = document.createElement('span');
+
+    //Set Structure of Elements (appendChild)
+    article.appendChild(articleTitle);
+    article.appendChild(expandButton);
+    article.appendChild(articleDate);
+    article.appendChild(paragraphOne);
+    article.appendChild(paragraphTwo);
+    article.appendChild(paragraphThree);
+    
+    //Set Class Names
+    article.classList.add('article');
+    articleDate.classList.add('article-date');
+    expandButton.classList.add('expand-button');
+
+    //Set Content
+    articleTitle.textContent = title;
+    articleDate.textContent = date;
+    paragraphOne.textContent = firstParagraph;
+    paragraphTwo.textContent = secondParagraph;
+    paragraphThree.textContent = thirdParagraph;
+    expandButton.textContent = '\u25bc';
+
+    //ADD EVENT LISTENER CLICK ON BUTTON
+    expandButton.addEventListener('click', (e) => {
+      article.classList.toggle('article-open');
+      console.log("open");
+   
+  })
+
+    //Return article with appended content
+    return article;
+
+}
+
+const article = document.querySelector('.articles');
+
+data.forEach(data => {
+  article.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+});
+
+/* <div class="article">
+<h2>{title of the article}</h2>
+<p class="date">{date of the article}</p>
+
+{three separate paragraph elements}
+
+<span class='expandButton'></span>
+</div> */
+
+
+
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
   <div class="article">
