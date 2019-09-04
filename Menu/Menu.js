@@ -6,8 +6,54 @@ let menuItems = [
   "What's New",
   'Tech Trends',
   'Music',
-  'Log Out'
+  'Log Out',
+  'That New New'
 ];
+
+function createMenu(menuItems){
+
+  //Define New Element div
+  const menu = document.createElement('div');
+  const ul = document.createElement('ul');
+
+  //Set Class Name Menu
+  menu.classList.add('menu');
+
+  //Set Structure of Elements
+  menu.appendChild(ul)
+
+  menuItems.forEach(menuItem => {
+
+    //Define New Element
+    const li = document.createElement('li');
+
+    //Set Content
+    li.textContent = menuItem;
+
+    //Append li to ui
+    ul.appendChild(li);
+
+  });
+
+  const menuButton = document.querySelector('.menu-button');
+        menuButton.addEventListener('click', () => {
+        menu.classList.toggle('menu--open');
+
+});
+
+return menu;
+
+}
+
+  //Add Menu Component to DOM
+  const button = document.querySelector('.menu-button');
+  const menu = createMenu(menuItems, button);
+  const header = document.querySelector('.header');
+  header.appendChild(menu);
+
+  //Creating new 
+  menu.appendChild(createMenu('new new'));
+
 
 /* 
 
